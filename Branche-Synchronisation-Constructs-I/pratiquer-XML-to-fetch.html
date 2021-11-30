@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+function reqListener () {
+  console.log(this.responseText);
+}
+
+var req = new XMLHttpRequest();
+req.responseType = 'json';
+req.open('GET', '<https://www.affirmations.dev/>', true);
+req.onload  = reqListener;
+req.send(null);
+
+console.log(req); */
+
+fetch('https://type.fit/api/quotes')
+    .then((data) => {
+        return data.json();
+    })
+    .then((json) => {
+        const quote = json[Math.floor(Math.random()*40)]; 
+        alert(`"${quote.text}"\n\t\t--${quote.author}.`);
+
+    })
+    </script>
+</body>
+</html>
